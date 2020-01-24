@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: com.cloudera.impala.jdbc41.Driver
+    url: jdbc:impala://172.33.60.131:21050/default
+    username:
+    password:
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.lxq.impala.orm.domain

@@ -1,0 +1,2 @@
+使用mybatis结合kudu进行增删改查
+schema中的分布采用简单的hash，分区的解释详见网络上的文章https://msd.misuland.com/pd/2884250068896977782
