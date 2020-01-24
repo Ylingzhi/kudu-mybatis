@@ -1,2 +1,4 @@
 使用mybatis结合kudu进行增删改查
-schema中的分布采用简单的hash，分区的解释详见网络上的文章https://msd.misuland.com/pd/2884250068896977782
+schema中的分布采用简单的hash，
+分区的解释详见网络上的文章https://msd.misuland.com/pd/2884250068896977782，仓库内已经把网页转为pdf
+由于是单机部署，因此在TBLPROPERTIES中加上了 kudu.num_tablet_replicas=1 的配置

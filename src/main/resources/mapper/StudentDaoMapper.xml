@@ -10,16 +10,35 @@
     </resultMap>
 
     <insert id="add">
-        INSERT INTO student (s_id, s_name, s_age, s_sex)
+        INSERT INTO student_kudu (s_id, s_name, s_age, s_sex)
         VALUES (#{entity.sId,jdbcType=VARCHAR},
                 #{entity.sName,jdbcType=VARCHAR},
                 #{entity.sAge,jdbcType=INTEGER},
                 #{entity.sSex,jdbcType=INTEGER})
     </insert>
 
+    <insert id="upsert">
+        UPSERT INTO student_kudu (s_id, s_name, s_age, s_sex)
+        VALUES (#{entity.sId,jdbcType=VARCHAR},
+        #{entity.sName,jdbcType=VARCHAR},
+        #{entity.sAge,jdbcType=INTEGER},
+        #{entity.sSex,jdbcType=INTEGER})
+    </insert>
+
+    <update id="update">
+        UPDATE student_kudu SET s_name = #{entity.sName},
+                                s_age = #{entity.sAge},
+                                s_sex = #{entity.sSex}
+        WHERE s_id = #{entity.sId}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM student_kudu WHERE s_id = #{sId}
+    </delete>
+
     <select id="find" resultMap="BaseResultMap">
         SELECT *
-        FROM student
+        FROM student_kudu
         WHERE s_id = #{sId}
     </select>
 </mapper>

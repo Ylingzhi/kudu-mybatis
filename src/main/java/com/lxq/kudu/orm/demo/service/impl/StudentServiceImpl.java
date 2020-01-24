@@ -26,4 +26,19 @@ public class StudentServiceImpl implements IStudentService {
     public Student find(String sId) {
         return studentDao.find(sId);
     }
+
+    @Override
+    public void delete(String sId) {
+        studentDao.delete(sId);
+    }
+
+    @Override
+    public void update(Student student) {
+        studentDao.update(student);
+    }
+
+    @Override
+    public void upsert(Student student) {
+        studentDao.upsert(student);
+    }
 }

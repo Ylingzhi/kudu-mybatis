@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2019/12/8
  */
 @SpringBootApplication
-@MapperScan("com.lxq.impala.orm.demo.dao")
+@MapperScan("com.lxq.kudu.orm.demo.dao")
 public class KuduOrmDemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(KuduOrmDemoApplication.class, args);

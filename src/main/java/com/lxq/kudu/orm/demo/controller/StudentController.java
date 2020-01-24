@@ -23,8 +23,26 @@ public class StudentController {
         return student;
     }
 
+    @PostMapping(value = "/upsert")
+    public Student upsert(@RequestBody Student student) {
+        studentService.upsert(student);
+        return student;
+    }
+
     @GetMapping(value = "/find")
     public Student find(@RequestParam(value = "sId") String sId) {
         return studentService.find(sId);
+    }
+
+    @PutMapping(value = "/update")
+    public Student update(@RequestBody Student student) {
+        studentService.update(student);
+        return student;
+    }
+
+    @DeleteMapping(value = "/delete")
+    public String delete(@RequestParam(value = "sId") String sId) {
+        studentService.delete(sId);
+        return sId;
     }
 }

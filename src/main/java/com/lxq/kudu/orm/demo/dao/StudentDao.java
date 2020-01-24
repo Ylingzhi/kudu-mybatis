@@ -24,4 +24,25 @@ public interface StudentDao {
      * @return
      */
     Student find(@Param("sId") String sId);
+
+    /**
+     * 删除
+     *
+     * @param sId
+     */
+    void delete(@Param("sId") String sId);
+
+    /**
+     * 更新
+     *
+     * @param student
+     */
+    void update(@Param("entity") Student student);
+
+    /**
+     * 插入 主键冲突时更新
+     *
+     * @param student
+     */
+    void upsert(@Param("entity") Student student);
 }
